@@ -102,11 +102,7 @@ router.delete('/delete', function(req, res) {
 
 	path = req.query.path;
 
-	//res.set({'Content-Type': 'application/json'});
-
-	//url = 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + path;
 	console.log(path);
-	//console.log('req: ' + url);
 
 	request({
 				url: 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + path
