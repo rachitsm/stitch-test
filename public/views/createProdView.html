@@ -1,0 +1,17 @@
+<div id="formLayout" ng-controller="createProdCtrl">
+    <h3>Create New Product!</h3>
+    <form method="post" name="createFrm">
+        <label for="prodTitle">Product Title :</label>
+        <input type="text" id="prodTitle" ng-model="pTitle" placeholder="Enter Title" required><br><br>
+        <div id="ptitleErr" ng-show="createFrm.prodTitle.$dirty&&createFrm.prodTitle.$invalid">
+            <span ng-show="createFrm.prodTitle.$error.required">Title is required!</span>
+        </div>
+        <label for="prodDesc">Product Description :</label>
+        <input type="text" id="prodDesc" ng-model="prodDesc" size="40" placeholder="Please provide valid Description"><br><br>
+        <label for="prodType">Product Type :</label>
+        <input type="text" id="prodType" ng-model="prodType" placeholder="Provide a type of product">
+        <p id="createFrmNote">**Please note that Shopify default image will be loaded for this product</p>
+        <input type="button" id="createSubmitBtn" value="Submit" ng-click="createPrd()" ng-disabled="createFrm.$invalid">
+        <button type="button" id="cancelBtn" ng-click="cancel()">Cancel</button>
+    </form>
+</div>

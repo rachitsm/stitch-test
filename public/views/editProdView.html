@@ -1,0 +1,11 @@
+<div id="formLayout" ng-controller="editProdCtrl">
+    <h3>Editing Product - {{pid}}</h3>
+    <form method="post" name="editFrm">
+        <label for="prodTitle">Product Title :</label>
+        <input type="text" id="prodTitle" ng-model="pTitle"><br><br>
+        <label for="prodDesc">Product Description :</label>
+        <input type="text" id="prodDesc" ng-model="prodDesc" size="40"><br><br>
+        <input type="button" id="updSubmitBtn" value="Submit" ng-click="updSubmit()">
+        <button type="button" id="cancelBtn" ng-click="cancel()">Cancel</button>
+    </form>
+</div>

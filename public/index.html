@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopify Products</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="services/dataFactory.js"></script>
+</head>
+<body ng-app="app">
+    <div class="container">
+        <header class="border">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div id="title">
+                <h1>
+                    Product Listing Application
+                </h1>
+            </div>
+        </header>
+        <section>
+            <div id="left-content" ng-controller="productCtrl">
+                <div id="newPrd">
+                    <a ng-href="#/createProduct">Create New Product</a>
+                </div>
+                <span>Search:</span>
+                <input type="text" id="search" ng-model="search.title">
+                <span ng-show="showErr">{{status}}</span><br>
+                <ul>
+                    <li ng-repeat="p in products | filter:search">
+                        <img ng-src={{p.image.src}} alt="productImage">
+                        <h4>ID - {{p.id}}</h4>
+                        <h4>Title - {{p.title}}</h4>
+                        <button id="detailBtn" type="button" ng-click="selectProduct(p.id)">Get Details</button>
+                        <button id="editBtn" type="button" ng-click="editProduct(p.id,p.title,p.body_html)">Edit</button>
+                        <button id="delBtn" type="button" ng-click="delProduct(p.id)">Delete</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="right-content" ng-view>
+
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>

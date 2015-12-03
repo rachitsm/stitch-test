@@ -1,0 +1,68 @@
+/*css for the app*/
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#newPrd{
+    margin-bottom: 10px;
+}
+
+.border{
+    border: 1px solid black;
+    box-shadow: 5px 5px grey;
+}
+
+.container{
+    width: 980px;
+    height: 640px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style-type: none;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 0;
+}
+
+#left-content{
+    width: 280px;
+    height: auto;
+    padding: 15px;
+    border-right: 3px solid black;
+    margin-top: 30px;
+    float:left;
+    clear: both;
+}
+#right-content{
+    width: 600px;
+    height: auto;
+    float: right;
+    margin-top: 30px;
+}
+#logo{
+    float: left;
+    width:300px;
+}
+#title{
+    text-align: center;
+    display: inline-block;
+    padding-top: 20px;
+}
+#createFrmNote{
+    color: red;
+}
+footer{
+    clear: both;
+}

@@ -1,0 +1,17 @@
+<div id="detailContent" ng-controller="productDetailsCtrl">
+    <p><strong>Description - </strong>{{singleProduct.body_html}}</p>
+
+    <!--<p>SKU - {{singleProduct.variants.sku}}</p>-->
+    <select name="variantSelect" id="variantSelect" ng-model="selected" ng-options="v.image_id as v.title for v in variants"></select>
+    <!--<p>Price - {{singleProduct.variants.price|currency}}</p>-->
+    <span>
+        <img ng-src='{{image.src}}' alt="product1" ng-repeat="image in images|filter:{id:selected}">
+    </span><br><br>
+    <div>
+        <strong>Stock & Price Details:</strong><br>
+        <p ng-repeat="v in variants">{{v.title}} - {{v.inventory_quantity}} || Price - {{v.price|currency}}</p>
+    </div>
+    <button type="button" ng-click="back()">Back</button>
+</div>
+
+
